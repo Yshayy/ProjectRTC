@@ -9,6 +9,8 @@ var express = require('express')
 var app = express()
   , server = http.createServer(app)
   , io = require('socket.io').listen(server);
+  
+io.set('transports', ['xhr-polling']); 
 
 // all environments
 app.set('port', process.env.PORT || 1337);
